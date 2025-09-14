@@ -25,7 +25,9 @@ player_score = [0 for _ in range(players)]
 while max(player_score) < maximum:
 
     for turn_index in range (players):
+        print(f"Board Score Status : {player_score} We play till 50! ")
         print(f"Player {turn_index+1} turn has started \nGood Luck !! ")
+        print(f"Your total score is {player_score[turn_index]}")
         current_score = 0
 
         while True:
@@ -36,7 +38,7 @@ while max(player_score) < maximum:
             player_turn = roll_func()
             if player_turn == 1:
                 print("You rolled 1! Turn done!")
-                current_score = 0
+                break
             else:
                 current_score += player_turn
                 print(f"Your rolled {player_turn}!")
@@ -45,4 +47,6 @@ while max(player_score) < maximum:
 
         player_score[turn_index] += current_score
         print(f"Your score is now  {player_score[turn_index]}")
+
+
 
